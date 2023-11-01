@@ -2,37 +2,47 @@
 {
     static void Main(string[] args)
     {
-        ConsoleKeyInfo txt = Console.ReadKey(true);
+        ConsoleKeyInfo txt = Console.ReadKey();
         do
         {
+            Console.WriteLine("Актава 1 - F1, Актава 2 - F2, Актава 3 - F3. Выход - Enter");
             txt = Console.ReadKey();
             switch (txt.Key)
             {
                 case ConsoleKey.F1:
                     {
-                        int[] muz01 = new int[12] { 65, 69, 73, 77, 82, 87, 92, 98, 103, 110, 116, 123 };
-                        foreach (int muz in muz01)
+                        
+                        foreach (int muz in Muz())
                         {
-                            muzic(muz);
+                            muzic(muz * 2);
+                            Console.ReadKey();
+                            Console.Write(" \r");
                         }
+                        Console.WriteLine();
                         break;
                     }
                 case ConsoleKey.F2:
                     {
-                        int[] muz02 = new int[12] { 130, 138, 146, 155, 164, 174, 185, 196, 207, 220, 233, 246 };
-                        foreach (int muz in muz02)
+                        
+                        foreach (int muz in Muz())
                         {
-                            muzic(muz);
+                            muzic(muz * 3);
+                            Console.ReadKey();
+                            Console.Write(" \r");
                         }
+                        Console.WriteLine();
                         break;
                     }
                 case ConsoleKey.F3:
                     {
-                        int[] muz03 = new int[12] { 261, 277, 293, 311, 329, 349, 370, 392, 415, 440, 466, 493 };
-                        foreach (int muz in muz03)
+                        
+                        foreach (int muz in Muz())
                         {
-                            muzic(muz);
+                            muzic(muz * 4);
+                            Console.ReadKey();
+                            Console.Write(" \r");
                         }
+                        Console.WriteLine();
                         break;
                     }
             }
@@ -41,6 +51,11 @@
     }
     static void muzic(int muz)
     {
-        Console.Beep(muz, 300);
+        Console.Beep(muz, 400);
+    }
+    static int[] Muz()
+    {
+        int[] muz001 = new int[12] { 65, 69, 73, 77, 82, 87, 92, 98, 103, 110, 116, 123 };
+        return muz001;
     }
 }
